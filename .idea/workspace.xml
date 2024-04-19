@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a16cf772-76cd-45af-bb40-eedd49585b92" name="默认变更列表" comment="实体类的创建以及Markdown工具的构建" />
+    <list id="4b079421-33a8-49a3-b1a3-7be5f4be9399" name="Revert &quot;实体类的创建以及Markdown工具的构建&quot;" comment="Revert &quot;实体类的创建以及Markdown工具的构建&quot;&#10;&#10;This reverts commit d08b2566" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$PROJECT_DIR$/../../java/apache-maven-3.6.1" />
+        <option name="userSettingsFile" value="G:\java\apache-maven-3.6.1\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="jdkForImporter" value="corretto-1.8" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2fHECN12Y2duigul1MbjJFz8yY5" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="jdk.selected.JAVA_MODULE" value="corretto-1.8" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="项目" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.notifications" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\A.源码\TBlog\blog-api" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.BlogCmsApplicationTests.contextLoads">
+    <configuration name="BlogCmsApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="blog-cms" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.traveller.blogcms.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.traveller.blogcms" />
+      <option name="MAIN_CLASS_NAME" value="com.traveller.blogcms.BlogCmsApplicationTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BlogCmsApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="blog-cms" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.traveller.blogcms.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.traveller.blogcms" />
+      <option name="MAIN_CLASS_NAME" value="com.traveller.blogcms.BlogCmsApplicationTests" />
+      <option name="METHOD_NAME" value="contextLoads" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.BlogCmsApplicationTests.contextLoads" />
+        <item itemvalue="JUnit.BlogCmsApplicationTests" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="a16cf772-76cd-45af-bb40-eedd49585b92" name="默认变更列表" comment="" />
+      <created>1713449474921</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1713449474921</updated>
+      <workItem from="1713449476061" duration="5815000" />
+      <workItem from="1713456733010" duration="384000" />
+      <workItem from="1713457138638" duration="23000" />
+      <workItem from="1713511897835" duration="757000" />
+    </task>
+    <task id="LOCAL-00001" summary="实体类的创建以及Markdown工具的构建">
+      <created>1713455769505</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1713455769505</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="实体类的创建以及Markdown工具的构建" />
+    <MESSAGE value="Revert &quot;实体类的创建以及Markdown工具的构建&quot;&#10;&#10;This reverts commit d08b2566" />
+    <option name="LAST_COMMIT_MESSAGE" value="Revert &quot;实体类的创建以及Markdown工具的构建&quot;&#10;&#10;This reverts commit d08b2566" />
+  </component>
+</project>
