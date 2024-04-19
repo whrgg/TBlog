@@ -15,19 +15,19 @@ public class Result<T> implements Serializable {
     public String msg;
     public T data;
 
-    public static <T> Result<T> sucessful(){
+    public static <T> Result<T> success(){
         Result<T> result = new Result<T>();
         result.code=200;
         return result;
     }
 
-    public static <T> Result<T> sucessful(T data){
+    public static <T> Result<T> success(T data){
         Result<T> result = new Result<T>();
         result.data=data;
         result.code=200;
         return result;
     }
-    public static <T> Result<T> sucessful(String msg){
+    public static <T> Result<T> success(String msg){
         Result <T>result = new Result<T>();
         result.msg=msg;
         result.code=200;

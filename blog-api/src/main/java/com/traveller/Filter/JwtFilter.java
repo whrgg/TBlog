@@ -52,7 +52,6 @@ public class JwtFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
 
         String token = request.getHeader(jwtProperties.getTokenName());
-        log.info("开始经过token处理器");
         // 如果值为空
         if(!StringUtils.isNotEmpty(token)){
             filterChain.doFilter(request,response);
@@ -76,12 +75,11 @@ public class JwtFilter extends OncePerRequestFilter {
         if(Objects.isNull(user)) {
             throw new userException(UserConstant.USER_NOT_FOUND);
         }
-
+        //TODO:注意用户端的鉴权，可以通过这个过滤器只能说明是用户但不能说明是普通用户还是管理员
         //如果有信息则存入后续中
         UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken=new UsernamePasswordAuthenticationToken(user,null,user.getAuthorities());
         SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
 
         filterChain.doFilter(request,response);
-        return ;
     }
 }

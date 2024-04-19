@@ -1,6 +1,7 @@
 package com.traveller.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,7 +22,7 @@ public class Blog {
 	private String title;
 
 	/**
-	 * 文章首图，用于随机文章展示
+	 * 文章展示图，用于随机文章展示
 	 */
 	private String firstPicture;
 
@@ -58,11 +59,13 @@ public class Blog {
 	/**
 	 * 创建时间
 	 */
+	@JsonFormat(pattern = "yyyy-MM-dd HH-mm-ss")
 	private java.util.Date createTime;
 
 	/**
 	 * 更新时间
 	 */
+	@JsonFormat(pattern = "yyyy-MM-dd HH-mm-ss")
 	private java.util.Date updateTime;
 
 	/**

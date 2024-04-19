@@ -1,0 +1,40 @@
+server:
+  port: 8081
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  profiles:
+    active: dev
+  main:
+    allow-circular-references: true
+  datasource:
+    druid:
+      driver-class-name: ${traveller.datasource.driver-class-name}
+      url: jdbc:mysql://${traveller.datasource.host}:${traveller.datasource.port}/${traveller.datasource.database}?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+      username: ${traveller.datasource.username}
+      password: ${traveller.datasource.password}
+  redis:
+    port: ${traveller.redis.port}
+    host: ${traveller.redis.host}
+
+mybatis:
+  #mapper配置文件
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.traveller.entity
+  configuration:
+    #开启驼峰命名
+    map-underscore-to-camel-case: true
+
+logging:
+  level:
+    com: trace
+
+traveller:
+  jwt:
+    # 设置jwt签名加密时使用的秘钥
+    secret-key: itcast
+    # 设置jwt过期时间
+    ttl: 72000000
+    # 设置前端传递过来的令牌名称
+    token-name: token

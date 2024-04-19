@@ -49,7 +49,8 @@ public class SercurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
-                .antMatchers("/admin/login","/user/**").anonymous()
+                .antMatchers( "/doc.html", "/webjars/**", "/swagger-resources/**", "/v2/**").permitAll()
+                .antMatchers("/admin/login").anonymous()
                 .anyRequest().authenticated();
         //配置跨域
         http.cors();

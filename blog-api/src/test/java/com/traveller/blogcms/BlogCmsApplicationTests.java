@@ -51,10 +51,10 @@ class BlogCmsApplicationTests {
     @Test
     void saveUser(){
         Date date = Date.from(LocalDateTime.now().toInstant(ZoneOffset.UTC));
-        User user =new User(null,"traveller", passwordEncoder.encode("Mysqltest"),"可爱捏",
-                date,date,"湖南常德","email","img","admin");
-        userMapper.insert(user);
-        System.out.println(user);
+        User user =new User(null,"traveller", passwordEncoder.encode("666666"),"可爱捏",
+                "湖南常德","email",date,date,"admin");
+        userMapper.save(user);
+        System.out.println(user.getId());
 
     }
 
