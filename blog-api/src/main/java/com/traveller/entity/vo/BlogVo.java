@@ -1,9 +1,7 @@
 package com.traveller.entity.vo;
 
 import com.traveller.entity.Blog;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 
@@ -14,5 +12,4 @@ public class BlogVo extends Blog{
 
     List<Long> tags;
     String categoryName;
-
 }

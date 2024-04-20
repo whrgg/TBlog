@@ -1,7 +1,9 @@
 package com.traveller.controller.admin;
 
 import com.traveller.entity.BlogTag;
+import com.traveller.entity.Tag;
 import com.traveller.service.BlogTagService;
+import com.traveller.service.TagService;
 import com.traveller.utils.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -14,25 +16,25 @@ import java.util.List;
 @Api(tags = "管理端标签接口")
 @RestController
 @RequestMapping("/admin/tag")
-public class AdminBlogTagController {
+public class AdminTagController {
 
     @Autowired
-    BlogTagService tagService;
+    TagService tagService;
 
     @ApiOperation("存tag")
     @PostMapping("/save")
-    public Result<String> save(@RequestBody BlogTag blogTag){
+    public Result<String> save(@RequestBody Tag tag){
 
-        tagService.save(blogTag);
+        tagService.save(tag);
 
         return Result.success("保存成功");
     }
 
     @ApiOperation("修改tag")
     @PutMapping("/update")
-    public Result<String> update(@RequestBody BlogTag blogTag){
+    public Result<String> update(@RequestBody Tag tag){
 
-        tagService.updateById(blogTag);
+        tagService.updateById(tag);
 
         return Result.success("保存成功");
     }

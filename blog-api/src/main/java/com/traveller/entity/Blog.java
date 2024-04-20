@@ -1,6 +1,7 @@
 package com.traveller.entity;
 
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -39,22 +40,22 @@ public class Blog {
 	/**
 	 * 公开或私密
 	 */
-	private String isPublished;
+	private Integer isPublished;
 
 	/**
 	 * 推荐开关
 	 */
-	private String isRecommend;
+	private Integer isRecommend;
 
 	/**
 	 * 赞赏开关
 	 */
-	private String isAppreciation;
+	private Integer isAppreciation;
 
 	/**
 	 * 评论开关
 	 */
-	private String isCommentEnabled;
+	private Integer isCommentEnabled;
 
 	/**
 	 * 创建时间
@@ -91,7 +92,7 @@ public class Blog {
 	/**
 	 * 是否置顶
 	 */
-	private String isTop;
+	private Integer isTop;
 
 	/**
 	 * 密码保护

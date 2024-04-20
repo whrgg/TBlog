@@ -38,3 +38,7 @@ traveller:
     ttl: 72000000
     # 设置前端传递过来的令牌名称
     token-name: token
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: assign_id

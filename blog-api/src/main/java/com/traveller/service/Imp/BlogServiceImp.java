@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class BlogServiceImp extends ServiceImpl<BlogMapper,Blog> implements BlogService {
@@ -38,7 +39,7 @@ public class BlogServiceImp extends ServiceImpl<BlogMapper,Blog> implements Blog
 
         IPage IPage=new Page(pageSize,page);
         LambdaQueryWrapper<Blog> queryWrapper=new LambdaQueryWrapper<>();
-        //注意密码为空的就不用来凑热闹了
+        //注意密码不为空的就不用来凑热闹了
         //也不会用来推荐
         queryWrapper.isNull(Blog::getPassword);
         //不愿意公开的也算了
@@ -108,7 +109,7 @@ public class BlogServiceImp extends ServiceImpl<BlogMapper,Blog> implements Blog
 
         //然后增加新的
         List<Long> tags = blogVo.getTags();
-
+        if(!Objects.isNull(tags))
         //增加新的
         tags.stream().forEach(tagId->{
             tagMapper.insert(new BlogTag(blogVo.getId(),tagId));
