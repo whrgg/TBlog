@@ -1,0 +1,30 @@
+2024-04-20 20:33:17.682  INFO 37552 --- [main] com.traveller.BlogCmsApplication         : Starting BlogCmsApplication using Java 1.8.0_372 on Sakura with PID 37552 (G:\A.源码\TBlog\blog-api\target\classes started by 吴晓 in G:\A.源码\TBlog\blog-api)
+2024-04-20 20:33:17.684  INFO 37552 --- [main] com.traveller.BlogCmsApplication         : The following 1 profile is active: "dev"
+2024-04-20 20:33:18.323  INFO 37552 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-04-20 20:33:18.325  INFO 37552 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-04-20 20:33:18.344  INFO 37552 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2024-04-20 20:33:18.740  INFO 37552 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2024-04-20 20:33:18.746  INFO 37552 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-20 20:33:18.747  INFO 37552 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2024-04-20 20:33:18.822  INFO 37552 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-20 20:33:18.822  INFO 37552 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1109 ms
+2024-04-20 20:33:18.990  INFO 37552 --- [main] com.traveller.config.RedisConfig         : Starting redisTemplate
+2024-04-20 20:33:19.134  INFO 37552 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2024-04-20 20:33:19.207  INFO 37552 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2024-04-20 20:33:19.658  WARN 37552 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.traveller.entity.BlogTag".
+2024-04-20 20:33:19.658  WARN 37552 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.traveller.entity.BlogTag ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-04-20 20:33:19.902  INFO 37552 --- [main] com.traveller.config.MvcConfig           : Cors closed
+2024-04-20 20:33:20.208  INFO 37552 --- [main] com.traveller.config.SercurityConfig     : configure starting
+2024-04-20 20:33:20.232  INFO 37552 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3c16528d, org.springframework.security.web.context.SecurityContextPersistenceFilter@439f2d87, org.springframework.security.web.header.HeaderWriterFilter@7e0f9528, org.springframework.web.filter.CorsFilter@2e45a357, org.springframework.security.web.authentication.logout.LogoutFilter@3afca2c, com.traveller.Filter.JwtFilter@54e12f4c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@852ef8d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3962ec84, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@389a5022, org.springframework.security.web.session.SessionManagementFilter@161d95c6, org.springframework.security.web.access.ExceptionTranslationFilter@3a38e4dc, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@9281d19]
+2024-04-20 20:33:20.289  INFO 37552 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2024-04-20 20:33:20.490  INFO 37552 --- [main] com.traveller.BlogCmsApplication         : Started BlogCmsApplication in 3.181 seconds (JVM running for 3.857)
+2024-04-20 20:33:24.596  INFO 37552 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-20 20:33:24.596  INFO 37552 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-04-20 20:33:24.597  INFO 37552 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-04-20 20:33:32.223 ERROR 37552 --- [http-nio-8081-exec-1] c.t.handler.GlobalExceptionHandler       : 用户不存在
+2024-04-20 20:39:19.635 ERROR 37552 --- [http-nio-8081-exec-3] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/tblog?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true, jdbcUrl : jdbc:mysql://localhost:3306/tblog?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true, lastPacketReceivedIdleMillis : 347410
+2024-04-20 20:39:19.643 ERROR 37552 --- [http-nio-8081-exec-3] c.t.handler.GlobalExceptionHandler       : 用户不存在
+2024-04-20 20:39:33.415 ERROR 37552 --- [http-nio-8081-exec-4] c.t.handler.GlobalExceptionHandler       : 用户不存在
+2024-04-20 20:39:46.894 ERROR 37552 --- [http-nio-8081-exec-5] c.t.handler.GlobalExceptionHandler       : 用户不存在
+2024-04-20 21:38:31.681  INFO 37552 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2024-04-20 21:38:31.682  INFO 37552 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed

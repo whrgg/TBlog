@@ -17,7 +17,7 @@
             <template slot="title">
               文章
             </template>
-           <router-link to="/diary" ><el-menu-item index="2-1" >首页</el-menu-item></router-link>
+           <router-link to="/diary" ><el-menu-item index="2-1" >日记</el-menu-item></router-link>
           <router-link to="/technology"><el-menu-item index="2-2">技术</el-menu-item></router-link>
         </el-submenu>
         <router-link to="/friend"><el-menu-item index="3">友链</el-menu-item></router-link>
@@ -59,5 +59,8 @@ export default {
     }
     .el-menu-item{
       font-size: larger;
+    }
+    .el-submenu *{
+        font-size: larger;
     }
 </style>

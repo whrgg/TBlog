@@ -1,0 +1,11 @@
+traveller:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    host: localhost
+    port: 3306
+    database: tblog
+    username: root
+    password: Whrgg6....
+  redis:
+    port: 6379
+    host: localhost

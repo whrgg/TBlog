@@ -1,0 +1,80 @@
+2024-04-23 20:19:14.720  INFO 11044 --- [main] com.traveller.BlogCmsApplication         : Starting BlogCmsApplication using Java 1.8.0_372 on Sakura with PID 11044 (G:\A.源码\TBlog\blog-api\target\classes started by 吴晓 in G:\A.源码\TBlog\blog-api)
+2024-04-23 20:19:14.722  INFO 11044 --- [main] com.traveller.BlogCmsApplication         : The following 1 profile is active: "dev"
+2024-04-23 20:19:15.375  INFO 11044 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-04-23 20:19:15.377  INFO 11044 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-04-23 20:19:15.400  INFO 11044 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2024-04-23 20:19:15.938  INFO 11044 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2024-04-23 20:19:15.946  INFO 11044 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-23 20:19:15.946  INFO 11044 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2024-04-23 20:19:16.025  INFO 11044 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-23 20:19:16.025  INFO 11044 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1277 ms
+2024-04-23 20:19:16.176  INFO 11044 --- [main] com.traveller.config.RedisConfig         : Starting redisTemplate
+2024-04-23 20:19:16.284  INFO 11044 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2024-04-23 20:19:16.359  INFO 11044 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2024-04-23 20:19:16.542  WARN 11044 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.traveller.entity.BlogTag".
+2024-04-23 20:19:16.542  WARN 11044 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.traveller.entity.BlogTag ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-04-23 20:19:17.330  INFO 11044 --- [main] com.traveller.config.MvcConfig           : Cors closed
+2024-04-23 20:19:17.755  INFO 11044 --- [main] com.traveller.config.SercurityConfig     : configure starting
+2024-04-23 20:19:17.787  INFO 11044 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1008df1e, org.springframework.security.web.context.SecurityContextPersistenceFilter@a0d875d, org.springframework.security.web.header.HeaderWriterFilter@6181bc4a, org.springframework.web.filter.CorsFilter@7ee12d58, org.springframework.security.web.authentication.logout.LogoutFilter@2673487b, com.traveller.Filter.JwtFilter@4f486211, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@550fa96f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@31b6b0c7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@e72fb04, org.springframework.security.web.session.SessionManagementFilter@370a8b6e, org.springframework.security.web.access.ExceptionTranslationFilter@4a336377, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1857fe6c]
+2024-04-23 20:19:17.863  INFO 11044 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2024-04-23 20:19:18.069  INFO 11044 --- [main] com.traveller.BlogCmsApplication         : Started BlogCmsApplication in 3.708 seconds (JVM running for 4.388)
+2024-04-23 20:19:30.686  INFO 11044 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-23 20:19:30.686  INFO 11044 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-04-23 20:19:30.687  INFO 11044 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-04-23 20:19:41.284 ERROR 11044 --- [http-nio-8081-exec-5] com.traveller.Filter.JwtFilter           : 身份验证过期JWT expired at 2024-04-23T18:10:13Z. Current time: 2024-04-23T20:19:41Z, a difference of 7768283 milliseconds.  Allowed clock skew: 0 milliseconds.
+2024-04-23 20:22:43.567  INFO 22060 --- [main] com.traveller.BlogCmsApplication         : Starting BlogCmsApplication using Java 1.8.0_372 on Sakura with PID 22060 (G:\A.源码\TBlog\blog-api\target\classes started by 吴晓 in G:\A.源码\TBlog\blog-api)
+2024-04-23 20:22:43.569  INFO 22060 --- [main] com.traveller.BlogCmsApplication         : The following 1 profile is active: "dev"
+2024-04-23 20:22:44.160  INFO 22060 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-04-23 20:22:44.162  INFO 22060 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-04-23 20:22:44.180  INFO 22060 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2024-04-23 20:22:44.673  INFO 22060 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2024-04-23 20:22:44.679  INFO 22060 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-23 20:22:44.679  INFO 22060 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2024-04-23 20:22:44.751  INFO 22060 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-23 20:22:44.752  INFO 22060 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1159 ms
+2024-04-23 20:22:44.872  INFO 22060 --- [main] com.traveller.config.RedisConfig         : Starting redisTemplate
+2024-04-23 20:22:44.971  INFO 22060 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2024-04-23 20:22:45.038  INFO 22060 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2024-04-23 20:22:45.209  WARN 22060 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.traveller.entity.BlogTag".
+2024-04-23 20:22:45.209  WARN 22060 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.traveller.entity.BlogTag ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-04-23 20:22:45.967  INFO 22060 --- [main] com.traveller.config.MvcConfig           : Cors closed
+2024-04-23 20:22:46.339  INFO 22060 --- [main] com.traveller.config.SercurityConfig     : configure starting
+2024-04-23 20:22:46.366  INFO 22060 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4aac81ca, org.springframework.security.web.context.SecurityContextPersistenceFilter@74bbc273, org.springframework.security.web.header.HeaderWriterFilter@2c2a903f, org.springframework.web.filter.CorsFilter@393ae7a0, org.springframework.security.web.authentication.logout.LogoutFilter@685e6a68, com.traveller.Filter.JwtFilter@1235151c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@9dc782d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5d01b0d8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@63326a3a, org.springframework.security.web.session.SessionManagementFilter@399f5daf, org.springframework.security.web.access.ExceptionTranslationFilter@43d3995f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@277bc3a5]
+2024-04-23 20:22:46.429  INFO 22060 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2024-04-23 20:22:46.647  INFO 22060 --- [main] com.traveller.BlogCmsApplication         : Started BlogCmsApplication in 3.415 seconds (JVM running for 4.051)
+2024-04-23 20:23:30.983  INFO 22060 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-23 20:23:30.983  INFO 22060 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-04-23 20:23:30.984  INFO 22060 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-04-23 20:49:05.318  INFO 22820 --- [main] com.traveller.BlogCmsApplication         : Starting BlogCmsApplication using Java 1.8.0_372 on Sakura with PID 22820 (G:\A.源码\TBlog\blog-api\target\classes started by 吴晓 in G:\A.源码\TBlog\blog-api)
+2024-04-23 20:49:05.320  INFO 22820 --- [main] com.traveller.BlogCmsApplication         : The following 1 profile is active: "dev"
+2024-04-23 20:49:05.896  INFO 22820 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-04-23 20:49:05.897  INFO 22820 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-04-23 20:49:05.917  INFO 22820 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2024-04-23 20:49:06.456  INFO 22820 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2024-04-23 20:49:06.464  INFO 22820 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-23 20:49:06.464  INFO 22820 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2024-04-23 20:49:06.547  INFO 22820 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-23 20:49:06.547  INFO 22820 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1198 ms
+2024-04-23 20:49:06.679  INFO 22820 --- [main] com.traveller.config.RedisConfig         : Starting redisTemplate
+2024-04-23 20:49:06.776  INFO 22820 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2024-04-23 20:49:06.841  INFO 22820 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2024-04-23 20:49:07.006  WARN 22820 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.traveller.entity.BlogTag".
+2024-04-23 20:49:07.006  WARN 22820 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.traveller.entity.BlogTag ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-04-23 20:49:07.632  INFO 22820 --- [main] n.b.parse.useragent.utils.YauaaVersion   : 
+2024-04-23 20:49:07.634  INFO 22820 --- [main] n.b.parse.useragent.utils.YauaaVersion   : /-----------------------------------------------------------\
+2024-04-23 20:49:07.635  INFO 22820 --- [main] n.b.parse.useragent.utils.YauaaVersion   : | Yauaa 7.11.0 (v7.11.0 @ 2023-01-24T21:50:03Z)             |
+2024-04-23 20:49:07.635  INFO 22820 --- [main] n.b.parse.useragent.utils.YauaaVersion   : +-----------------------------------------------------------+
+2024-04-23 20:49:07.635  INFO 22820 --- [main] n.b.parse.useragent.utils.YauaaVersion   : | For more information: https://yauaa.basjes.nl             |
+2024-04-23 20:49:07.635  INFO 22820 --- [main] n.b.parse.useragent.utils.YauaaVersion   : | Copyright (C) 2013-2023 Niels Basjes - License Apache 2.0 |
+2024-04-23 20:49:07.635  INFO 22820 --- [main] n.b.parse.useragent.utils.YauaaVersion   : \-----------------------------------------------------------/
+2024-04-23 20:49:07.635  INFO 22820 --- [main] n.b.parse.useragent.utils.YauaaVersion   : 
+2024-04-23 20:49:07.717  INFO 22820 --- [main] n.b.parse.useragent.config.ConfigLoader  : - Loaded 111 files in   79 ms using expression: classpath*:UserAgents/**/*.yaml
+2024-04-23 20:49:08.373  INFO 22820 --- [main] n.b.p.u.a.UserAgentStringMatchMaker      : Building all needed matchers for the requested 11 fields.
+2024-04-23 20:49:08.582  INFO 22820 --- [main] com.traveller.config.MvcConfig           : Cors closed
+2024-04-23 20:49:08.962  INFO 22820 --- [main] com.traveller.config.SercurityConfig     : configure starting
+2024-04-23 20:49:08.987  INFO 22820 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7b0ad007, org.springframework.security.web.context.SecurityContextPersistenceFilter@674de53e, org.springframework.security.web.header.HeaderWriterFilter@62de6b17, org.springframework.web.filter.CorsFilter@7abc82fa, org.springframework.security.web.authentication.logout.LogoutFilter@1ef64e45, com.traveller.Filter.JwtFilter@76ff68c5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2882a80d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@35929bc7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7e7a6f81, org.springframework.security.web.session.SessionManagementFilter@1936513a, org.springframework.security.web.access.ExceptionTranslationFilter@58f28c5e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@514ee14c]
+2024-04-23 20:49:09.046  INFO 22820 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2024-04-23 20:49:09.245  INFO 22820 --- [main] com.traveller.BlogCmsApplication         : Started BlogCmsApplication in 4.235 seconds (JVM running for 4.86)
+2024-04-23 20:49:19.305  INFO 22820 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-23 20:49:19.305  INFO 22820 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-04-23 20:49:19.307  INFO 22820 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
