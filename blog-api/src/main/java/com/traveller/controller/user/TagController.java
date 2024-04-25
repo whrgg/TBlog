@@ -1,34 +1,44 @@
 package com.traveller.controller.user;
 
-import com.traveller.entity.BlogTag;
 import com.traveller.entity.Tag;
-import com.traveller.service.BlogTagService;
 import com.traveller.service.TagService;
 import com.traveller.utils.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.models.auth.In;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.Collection;
 import java.util.List;
 
-@Api(tags = "用户端的标签接口")
+@Api(tags = "标签管理")
 @RestController
-@RequestMapping("/user/tags")
+@RequestMapping("/user/tag")
 public class TagController {
 
     @Autowired
-    TagService tagservice;
+    TagService tagService;
 
-    @ApiOperation("获取tags")
+    @ApiOperation("获取所有的标签")
     @GetMapping("/list")
-    public Result<List<Tag>> list(){
+    public Result<List<Tag>> selectAll(){
 
-        List<Tag> list = tagservice.list();
+        List<Tag> list = tagService.list();
 
         return Result.success(list);
+
     }
+
+    @ApiOperation("根据id获取标签")
+    @GetMapping("/{id}")
+    public Result<Tag> selectById(@PathVariable Integer id){
+
+        Tag tag=tagService.getById(id);
+
+        return Result.success(tag);
+    }
+
 
 }

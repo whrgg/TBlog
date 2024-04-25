@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -68,7 +70,7 @@ public class OperationLog {
 	/**
 	 * 操作时间
 	 */
-	private java.util.Date createTime;
+	private Date createTime;
 
 	/**
 	 * user-agent用户代理
@@ -76,4 +78,14 @@ public class OperationLog {
 	private String userAgent;
 
 
+	public OperationLog(String username, String uri, String method, String description, String ip, Integer times, String userAgent) {
+		this.username = username;
+		this.uri = uri;
+		this.method = method;
+		this.description = description;
+		this.ip = ip;
+		this.times = times;
+		this.createTime = new Date();
+		this.userAgent = userAgent;
+	}
 }

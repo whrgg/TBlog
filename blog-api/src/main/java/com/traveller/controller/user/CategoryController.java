@@ -31,6 +31,15 @@ public class CategoryController {
         return Result.success(list);
     }
 
+    @ApiOperation("根据id查询分类详情")
+    @GetMapping("/{id}")
+    public Result<Category> getCategoryById(@PathVariable  Integer id){
+
+        Category category = categoryService.getById(id);
+
+        return Result.success(category);
+    }
+
 
 
 }

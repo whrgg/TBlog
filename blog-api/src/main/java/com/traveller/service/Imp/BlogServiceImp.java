@@ -11,6 +11,8 @@ import com.traveller.mapper.BlogMapper;
 import com.traveller.mapper.BlogTagMapper;
 import com.traveller.mapper.CategoryMapper;
 import com.traveller.service.BlogService;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,6 +20,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import java.util.Objects;
 
+@Slf4j
 @Service
 public class BlogServiceImp extends ServiceImpl<BlogMapper,Blog> implements BlogService {
     //TODO:真的要这么多的查询方法嘛？有工厂方法简化嘛？
@@ -39,7 +42,7 @@ public class BlogServiceImp extends ServiceImpl<BlogMapper,Blog> implements Blog
 
         IPage IPage=new Page(pageSize,page);
         LambdaQueryWrapper<Blog> queryWrapper=new LambdaQueryWrapper<>();
-        //注意密码不为空的就不用来凑热闹了
+        //注意密码为空的就不用来凑热闹了
         //也不会用来推荐
         queryWrapper.isNull(Blog::getPassword);
         //不愿意公开的也算了
@@ -58,7 +61,7 @@ public class BlogServiceImp extends ServiceImpl<BlogMapper,Blog> implements Blog
      */
     @Override
     public IPage<Blog> pageBlog(Integer page, Integer pageSize) {
-        IPage IPage=new Page(pageSize,page);
+        IPage IPage=new Page(page,pageSize);
         LambdaQueryWrapper<Blog> queryWrapper=new LambdaQueryWrapper<>();
         //注意密码为空的就不用来凑热闹了
         //也不会用来推荐
@@ -102,14 +105,13 @@ public class BlogServiceImp extends ServiceImpl<BlogMapper,Blog> implements Blog
     @Override
     public void updateAll(BlogVo blogVo) {
         //更新博文本体
-        blogMapper.updateById(blogVo);
+        blogMapper.updateBlog(blogVo);
         //根据博客的id删除blog-tag表中的联系
-
         tagMapper.deleteByBlogId(blogVo.getId());
-
         //然后增加新的
         List<Long> tags = blogVo.getTags();
-        if(!Objects.isNull(tags))
+        if(Objects.isNull(tags)||tags.size()==0)
+            return;
         //增加新的
         tags.stream().forEach(tagId->{
             tagMapper.insert(new BlogTag(blogVo.getId(),tagId));

@@ -8,20 +8,19 @@
         background-color="rgb(36, 74, 191)"
         text-color="#00FFFF"
         active-text-color="#fff">
-        <el-menu-item index="1">
-            <router-link to="/">首页</router-link>
-        </el-menu-item>
+        <router-link to="/">
+          <el-menu-item index="1">
+              首页
+          </el-menu-item>
+        </router-link>
         <el-submenu index="2">
             <template slot="title">
-                 <router-link to="/message">文章</router-link>
+              文章
             </template>
-            <el-menu-item index="2-1" ><router-link to="/home/diary" >日记</router-link></el-menu-item>
-            <el-menu-item index="2-2"><router-link to="/home/technology">技术</router-link></el-menu-item>
+           <router-link to="/diary" ><el-menu-item index="2-1" >首页</el-menu-item></router-link>
+          <router-link to="/technology"><el-menu-item index="2-2">技术</el-menu-item></router-link>
         </el-submenu>
-        <el-menu-item index="3"><router-link to="/friend">友链</router-link></el-menu-item>
-        <el-menu-item index="4">
-            <router-link to=""></router-link>
-        </el-menu-item>
+        <router-link to="/friend"><el-menu-item index="3">友链</el-menu-item></router-link>
         </el-menu>
     </div>
 </template>
@@ -56,6 +55,9 @@ export default {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100%; /* 或者一个具体的高度值 */
+        height: 15vh; /* 或者一个具体的高度值 */
+    }
+    .el-menu-item{
+      font-size: larger;
     }
 </style>

@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.*;
  */
 @Api(tags ="用户端博客文章管理接口")
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/user/blog")
 public class BlogTextController {
 
     @Autowired
@@ -32,10 +32,19 @@ public class BlogTextController {
      * 分页查询blog的内容
      */
     @ApiOperation("获取文章相关内容")
-    @GetMapping("/blog/desc")
+    @GetMapping("/desc")
     public Result<IPage<Blog>> GetBlog(int page,int pageSize){
         IPage<Blog> blogIPage = blogService.pageBlogDesc(page, pageSize);
         return Result.success(blogIPage);
+    }
+
+    @ApiOperation("根据id获取文章详情")
+    @GetMapping("/{id}")
+    public Result<Blog> GetBlogById(@PathVariable  int id){
+
+        Blog blog = blogService.getById(id);
+
+        return Result.success(blog);
     }
 
 

@@ -33,6 +33,9 @@ public class UserServiceImp extends ServiceImpl<UserMapper, User> implements Use
     @Override
     public User selectUserByUsername(String username) {
         User user = userMapper.selectUserByUsername(username);
+        if(Objects.isNull(user)){
+            throw new UsernameNotFoundException(UserConstant.USER_NOT_FOUND);
+        }
         user.setPassword(null);
         return user;
     }
