@@ -19,13 +19,12 @@
           </el-carousel-item>
        </el-carousel>
        <!-- 走马图 -->
-        <BlogDesc></BlogDesc>
-        <BlogDesc></BlogDesc>
-        <BlogDesc></BlogDesc>
+        <BlogDesc v-for="item in BlogDesc" :key="item.index" :blogdesc="item"></BlogDesc>
         <el-pagination
   background
   layout="prev, pager, next"
-  :total="30">
+  :total="total"
+  @current-change="handleCurrentChange">
 </el-pagination>
       </el-main>
       <div class="container-left-somedesc">
@@ -45,6 +44,7 @@
 <script>
 import HomeLeft from '@/components/home/homeLeft.vue'
 import BlogDesc from '@/components/Blog/BlogDesc.vue'
+import { getBlogPage } from '@/api/Blog'
 export default {
   components: {
     HomeLeft: HomeLeft,
@@ -54,10 +54,32 @@ export default {
     return {
       RangeBlog: [{ img: 'https://github.com/whrgg/IMG/raw/main/TBlog-img/103451088_p0_master1200.jpg', text: '666666' },
         { img: 'https://github.com/whrgg/IMG/raw/main/TBlog-img/%E5%A3%81%E7%BA%B8.png', text: '99999999999' },
-        { img: 'https://github.com/whrgg/IMG/raw/main/TBlog-img/%E5%BE%88%E5%A5%BD%E7%9C%8B%E7%9A%84%E7%A5%9E%E5%AD%90.png', text: '77777777777' }]
+        { img: 'https://github.com/whrgg/IMG/raw/main/TBlog-img/%E5%BE%88%E5%A5%BD%E7%9C%8B%E7%9A%84%E7%A5%9E%E5%AD%90.png', text: '77777777777' }],
+      BlogDesc: [],
+      total: 10,
+      currentPage: 1
+    }
+  },
+  mounted () {
+    getBlogPage(1, 2).then(response => {
+      this.BlogDesc = response.data.data.records
+      this.total = response.data.data.pages * 10
+      console.log(response.data.data)
+    })
+  },
+  methods: {
+    handleSizeChange (val) {
+      console.log(`每页 ${val} 条`)
+    },
+    handleCurrentChange (val) {
+      this.currentPage = val
+      getBlogPage(this.currentPage, 2).then(response => {
+        this.BlogDesc = response.data.data.records
+        this.total = response.data.data.pages * 10
+        console.log(response.data.data)
+      })
     }
   }
-
 }
 
 </script>

@@ -8,8 +8,6 @@
                 traveller
             </div>
             <div id="text-container">
-            </div>
-            <div>
                 <el-collapse accordion>
                     <el-collapse-item :title="item.title" :name="index" v-for="(item, index) in introduction.favorites"
                         :key="index">
@@ -33,7 +31,7 @@ const about = {
           { title: '喜欢的小说人物', content: '封不觉，陈平安，齐静春，高文，槐诗' },
           { title: '喜欢的游戏', content: '火山的女儿，卡拉比丘，原神，崩坏三' },
           { title: '喜欢游戏', content: '火山的女儿，卡拉比丘，原神，崩坏三' },
-          { title: '喜欢戏', content: '火山的女儿，卡拉比丘，原神，崩坏三' }
+          { title: '喜欢游戏', content: '火山的女儿，卡拉比丘，原神，崩坏三' }
         ],
         rollText: '遇事不决，可问春风'
       },
@@ -50,7 +48,7 @@ const about = {
 export default about
 </script>
 
-<style>
+<style scoped>
 * {
     padding: 0;
     margin: 0;
@@ -94,4 +92,8 @@ export default about
 .Abouttop:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 }
+.text-container{
+    background: url('../../assets/qwq.jpg');
+}
+
 </style>

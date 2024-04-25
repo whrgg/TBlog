@@ -14,6 +14,7 @@ spring:
       url: jdbc:mysql://${traveller.datasource.host}:${traveller.datasource.port}/${traveller.datasource.database}?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
       username: ${traveller.datasource.username}
       password: ${traveller.datasource.password}
+      min-idle: 3
   redis:
     port: ${traveller.redis.port}
     host: ${traveller.redis.host}

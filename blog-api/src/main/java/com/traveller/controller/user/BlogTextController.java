@@ -9,6 +9,8 @@ import com.traveller.service.BlogTagService;
 import com.traveller.utils.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,6 +19,7 @@ import org.springframework.web.bind.annotation.*;
  * @date 2024/04/19
  * 博客文章内容
  */
+@Slf4j
 @Api(tags ="用户端博客文章管理接口")
 @RestController
 @RequestMapping("/user/blog")
@@ -33,14 +36,14 @@ public class BlogTextController {
      */
     @ApiOperation("获取文章相关内容")
     @GetMapping("/desc")
-    public Result<IPage<Blog>> GetBlog(int page,int pageSize){
+    public Result<IPage<Blog>> GetBlog(@Param("page") Integer page, @Param("pageSize") Integer pageSize){
         IPage<Blog> blogIPage = blogService.pageBlogDesc(page, pageSize);
         return Result.success(blogIPage);
     }
 
     @ApiOperation("根据id获取文章详情")
     @GetMapping("/{id}")
-    public Result<Blog> GetBlogById(@PathVariable  int id){
+    public Result<Blog> GetBlogById(@PathVariable  Integer id){
 
         Blog blog = blogService.getById(id);
 

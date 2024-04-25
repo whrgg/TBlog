@@ -50,7 +50,7 @@ public class AdminBlogTextController {
 
     @ApiOperation("删除博客文章")
     @OperateLog("删除博客")
-    @DeleteMapping("/delte")
+    @DeleteMapping("/delete")
     public Result<String> deleteBlog(@RequestBody BlogVo blogVo){
 
         blogService.removeBlogAndTagById(blogVo.getId());

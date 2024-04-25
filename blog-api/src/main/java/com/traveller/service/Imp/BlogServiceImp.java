@@ -40,9 +40,9 @@ public class BlogServiceImp extends ServiceImpl<BlogMapper,Blog> implements Blog
     @Override
     public IPage<Blog> pageBlogDesc(Integer page, Integer pageSize) {
 
-        IPage IPage=new Page(pageSize,page);
+        IPage IPage=new Page(page,pageSize);
         LambdaQueryWrapper<Blog> queryWrapper=new LambdaQueryWrapper<>();
-        //注意密码为空的就不用来凑热闹了
+        //注意密码不为空的就不用来凑热闹了
         //也不会用来推荐
         queryWrapper.isNull(Blog::getPassword);
         //不愿意公开的也算了

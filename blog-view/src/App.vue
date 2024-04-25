@@ -6,7 +6,18 @@
   </div>
 </template>
 
-<style>
+<script>
+import headerVue from './components/header.vue'
+import footerVue from '@/components/footer/footer.vue'
+export default {
+  components: {
+    headerVue: headerVue,
+    footerVue: footerVue
+  }
+}
+</script>
+
+<style scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -29,14 +40,3 @@ nav a.router-link-exact-active {
 }
 
 </style>
-
-<script>
-import headerVue from './components/header.vue'
-import footerVue from '@/components/footer/footer.vue'
-export default {
-  components: {
-    headerVue: headerVue,
-    footerVue: footerVue
-  }
-}
-</script>
