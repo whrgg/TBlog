@@ -49,7 +49,7 @@ public class SercurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
-                .antMatchers( "/doc.html", "/webjars/**", "/swagger-resources/**", "/v2/**").permitAll()
+                .antMatchers( "/doc.html", "/webjars/**", "/swagger-resources/**", "/v2/**","/user/**").permitAll()
                 .antMatchers("/admin/login").anonymous()
                 .anyRequest().authenticated();
         //配置跨域

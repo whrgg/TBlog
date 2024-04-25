@@ -1,6 +1,8 @@
 package com.traveller.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.traveller.annotation.AutoFill;
+import com.traveller.enums.AutoFillType;
 import com.traveller.entity.Blog;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
@@ -11,6 +13,10 @@ public interface BlogMapper extends BaseMapper<Blog> {
     @Insert("insert into blog ( title, first_picture, content, description, is_published," +
             " is_recommend, is_appreciation, is_comment_enabled, create_time, update_time, views, words, read_time, category_id, is_top, password, user_id) " +
             "values (#{title},#{firstPicture},#{content},#{description},#{isPublished}," +
-            "#{isRecommend},#{isAppreciation},#{isComment_enabled},#{createTime},#{updateTime},#{views},#{words},#{readTime},#{categoryId},#{isTop},#{password},#{userId})")
-    Blog saveBlog(Blog blog);
+            "#{isRecommend},#{isAppreciation},#{isCommentEnabled},#{createTime},#{updateTime},#{views},#{words},#{readTime},#{categoryId},#{isTop},#{password},#{userId})")
+    @AutoFill(value = AutoFillType.INSERT)
+    Integer saveBlog(Blog blog);
+
+    @AutoFill(value =AutoFillType.UPDATE)
+    void updateBlog(Blog blog);
 }

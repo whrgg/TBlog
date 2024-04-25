@@ -2,6 +2,7 @@ package com.traveller.controller.admin;
 
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.traveller.annotation.OperateLog;
 import com.traveller.entity.Blog;
 import com.traveller.entity.Category;
 import com.traveller.entity.vo.BlogVo;
@@ -22,7 +23,7 @@ import org.springframework.web.bind.annotation.*;
  */
 @Api(tags = "管理端博客文章管理接口")
 @RestController()
-@RequestMapping("/admin")
+@RequestMapping("/admin/blog")
 public class AdminBlogTextController {
 
     @Autowired
@@ -38,7 +39,7 @@ public class AdminBlogTextController {
      * 管理员保存文章
      */
     @ApiOperation("保存数据")
-    @PostMapping("/blog/save")
+    @PostMapping("/save")
     public Result<String> saveBlog(@RequestBody BlogVo blogVo){
 
         blogService.saveBlog(blogVo);
@@ -48,7 +49,8 @@ public class AdminBlogTextController {
     }
 
     @ApiOperation("删除博客文章")
-    @DeleteMapping("/blog/delte")
+    @OperateLog("删除博客")
+    @DeleteMapping("/delte")
     public Result<String> deleteBlog(@RequestBody BlogVo blogVo){
 
         blogService.removeBlogAndTagById(blogVo.getId());
@@ -57,7 +59,7 @@ public class AdminBlogTextController {
     }
 
     @ApiOperation("修改文章")
-    @PutMapping("/blog/update")
+    @PutMapping("/update")
     public Result<String> updateBlog(@RequestBody BlogVo blogVo){
 
         //可以直接更新文章

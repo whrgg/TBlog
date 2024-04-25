@@ -8,14 +8,17 @@ import org.apache.ibatis.annotations.Delete;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class BlogTagServiceImp extends ServiceImpl<BlogTagMapper, BlogTag> implements BlogTagService {
 
     @Autowired
     BlogTagMapper blogTagMapper;
 
+
     @Override
-    public void removeByBlogId(Long blogId) {
-        blogTagMapper.deleteByBlogId(blogId);
+    public void removeByBlogIds(List<Long> blogId) {
+        blogTagMapper.deleteByBlogIds(blogId);
     }
 }

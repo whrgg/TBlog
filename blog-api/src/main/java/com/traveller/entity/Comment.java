@@ -1,9 +1,12 @@
 package com.traveller.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.Date;
 
 @Data
 @AllArgsConstructor
@@ -38,7 +41,8 @@ public class Comment {
 	/**
 	 * 评论时间
 	 */
-	private java.util.Date createTime;
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	private Date createTime;
 
 	/**
 	 * 评论者ip地址

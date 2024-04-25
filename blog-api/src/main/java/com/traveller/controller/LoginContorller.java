@@ -1,5 +1,6 @@
 package com.traveller.controller;
 
+import com.traveller.annotation.OperateLog;
 import com.traveller.constant.JwtClaimsConstant;
 import com.traveller.constant.UserConstant;
 import com.traveller.entity.User;
@@ -40,15 +41,9 @@ public class LoginContorller {
     @PostMapping("/login")
     public Result<String> login(@RequestBody User user){
         user=userService.selectUserByUsername(user.getUsername());
-        if(Objects.isNull(user)){
-            throw new userException(UserConstant.USER_NOT_FOUND);
-        }
         Map claims=new HashMap();
-
         claims.put(UserConstant.USER,user.getId());
-
-
-        String jwt = JwtUtils.CreateJWT(jwtProperties.getSecretKey(), jwtProperties.getTtl(), claims);
+        String jwt = JwtUtils.CreateJWT( jwtProperties.getSecretKey(),jwtProperties.getTtl(), claims);
         redisTemplate.opsForValue().set(JwtClaimsConstant.EMP_ID +":"+ user.getId(),user, 72000000,TimeUnit.MILLISECONDS);
         //发放token
         return Result.success(jwt);

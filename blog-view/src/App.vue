@@ -2,6 +2,7 @@
   <div id="app">
     <headerVue></headerVue>
     <router-view/>
+    <footerVue></footerVue>
   </div>
 </template>
 
@@ -26,13 +27,16 @@ nav a {
 nav a.router-link-exact-active {
   color: #42b983;
 }
+
 </style>
 
 <script>
 import headerVue from './components/header.vue'
+import footerVue from '@/components/footer/footer.vue'
 export default {
   components: {
-    headerVue: headerVue
+    headerVue: headerVue,
+    footerVue: footerVue
   }
 }
 </script>
