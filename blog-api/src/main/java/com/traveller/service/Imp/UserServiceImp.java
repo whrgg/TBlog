@@ -39,4 +39,10 @@ public class UserServiceImp extends ServiceImpl<UserMapper, User> implements Use
         user.setPassword(null);
         return user;
     }
+
+    @Override
+    public User selectUserByUsernameR(String username) {
+        User user = userMapper.selectUserByUsername(username);
+        return user;
+    }
 }

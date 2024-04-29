@@ -3,15 +3,20 @@ package com.traveller.controller.admin;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.traveller.annotation.OperateLog;
 import com.traveller.entity.Comment;
+import com.traveller.entity.User;
 import com.traveller.service.CommentService;
 import com.traveller.utils.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.SpringSecurityCoreVersion;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@Slf4j
 @Api(tags = "管理评论")
 @RestController
 @RequestMapping("/admin/comment")
@@ -23,7 +28,9 @@ public class AdminCommentController {
     @ApiOperation("保存评论")
     @PostMapping("/save")
     public Result<String> saveComment(@RequestBody Comment comment){
-
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        BeanUtils.copyProperties(user,comment,"id");
+        log.info("{}",comment);
         //comment的内容除了id全部由前端发来的决定
         //所以直接存即可
         commentService.save(comment);

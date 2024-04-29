@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.traveller.entity.Blog;
 import com.traveller.service.BlogService;
 import com.traveller.service.BlogTagService;
+import com.traveller.utils.MarkdownUtils;
 import com.traveller.utils.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -46,6 +47,9 @@ public class BlogTextController {
     public Result<Blog> GetBlogById(@PathVariable  Integer id){
 
         Blog blog = blogService.getById(id);
+        String content = blog.getContent();
+        content= MarkdownUtils.ParseMarkdown(content);
+        blog.setContent(content);
 
         return Result.success(blog);
     }

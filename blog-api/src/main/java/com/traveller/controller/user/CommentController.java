@@ -22,7 +22,7 @@ public class CommentController {
     CommentService commentService;
 
     @ApiOperation("根据博文id获取评论")
-    @GetMapping("/list")
+    @GetMapping("/bloglist")
     public Result<IPage> list(@RequestParam(defaultValue = "1") Integer page,
                        @RequestParam(defaultValue = "4") Integer pageSize,
                        @RequestParam Long blogId){

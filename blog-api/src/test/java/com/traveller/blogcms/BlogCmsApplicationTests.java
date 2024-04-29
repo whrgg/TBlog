@@ -1,13 +1,22 @@
 package com.traveller.blogcms;
 
 import com.alibaba.druid.support.json.JSONUtils;
+import com.traveller.entity.Tomail;
 import com.traveller.entity.User;
 import com.traveller.mapper.UserMapper;
 import com.traveller.properties.JwtProperties;
+import com.traveller.service.UserService;
+import com.traveller.utils.MailUtils;
 import com.traveller.utils.MarkdownUtils;
+import org.checkerframework.checker.units.qual.A;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.mail.MailException;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.time.LocalDateTime;
@@ -17,15 +26,16 @@ import java.util.Date;
 
 @SpringBootTest
 class BlogCmsApplicationTests {
-
+    @Autowired
+    MailUtils mailUtils;
 
     @Autowired
-    UserMapper userMapper;
-    @Autowired
-    PasswordEncoder passwordEncoder;
-    @Autowired
-    JwtProperties jwtProperties;
-
+    JavaMailSender mailSender;
+    /**
+     * 发送人
+     */
+    @Value("${spring.mail.username}")
+    private String from;
     @Test
     void contextLoads() {
         String s = MarkdownUtils.ParseMarkdown("~~~java\n" +
@@ -41,25 +51,8 @@ class BlogCmsApplicationTests {
     }
 
     @Test
-    void getUser(){
-
-        User traveller = userMapper.selectUserByUsername("traveller");
-
-        System.out.println(traveller);
-    }
-
-    @Test
-    void saveUser(){
-        Date date = Date.from(LocalDateTime.now().toInstant(ZoneOffset.UTC));
-        User user =new User(null,"traveller", passwordEncoder.encode("666666"),"可爱捏",
-                "湖南常德","email",date,date,"admin");
-        userMapper.save(user);
-        System.out.println(user.getId());
-
-    }
-
-    @Test
-    void properties(){
-        System.out.println(jwtProperties);
+    void mailTest(){
+        Tomail toEmail =new Tomail(new String[]{"2186840198@qq.com"},"欢迎","欢迎您来小站玩");
+        mailUtils.sendregisterMessage(toEmail,3951);
     }
 }

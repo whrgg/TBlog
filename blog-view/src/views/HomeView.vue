@@ -18,7 +18,7 @@
             </div>
           </el-carousel-item>
        </el-carousel>
-       <!-- 走马图 -->
+       <!-- 走马图结束 -->
         <BlogDesc v-for="item in BlogDesc" :key="item.index" :blogdesc="item"></BlogDesc>
         <el-pagination
   background
@@ -28,8 +28,6 @@
 </el-pagination>
       </el-main>
       <div class="container-left-somedesc">
-        <HomeLeft class="somedesc-margin-1"></HomeLeft>
-        <HomeLeft class="somedesc-margin"></HomeLeft>
         <HomeLeft class="somedesc-margin-1"></HomeLeft>
       </div>
       </el-container>
@@ -64,7 +62,6 @@ export default {
     getBlogPage(1, 2).then(response => {
       this.BlogDesc = response.data.data.records
       this.total = response.data.data.pages * 10
-      console.log(response.data.data)
     })
   },
   methods: {
@@ -76,7 +73,6 @@ export default {
       getBlogPage(this.currentPage, 2).then(response => {
         this.BlogDesc = response.data.data.records
         this.total = response.data.data.pages * 10
-        console.log(response.data.data)
       })
     }
   }

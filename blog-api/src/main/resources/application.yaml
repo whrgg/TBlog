@@ -18,6 +18,25 @@ spring:
   redis:
     port: ${traveller.redis.port}
     host: ${traveller.redis.host}
+  mail:
+    #smtp服务主机  qq邮箱则为smtp.qq.com
+    host: ${traveller.mail.host}
+    #服务协议
+    protocol: ${traveller.mail.protocol}
+    # 编码集
+    default-encoding: UTF-8
+    #发送邮件的账户
+    username: ${traveller.mail.username}
+    #授权码
+    password: ${traveller.mail.password}
+    test-connection: true
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
 
 mybatis:
   #mapper配置文件
@@ -32,8 +51,10 @@ traveller:
     # 设置jwt签名加密时使用的秘钥
     secret-key: traveller-TBlog
     # 设置jwt过期时间
-    ttl: 72000000
+    ttl: 36000000
     # 设置前端传递过来的令牌名称
     token-name: token
 
+blog:
+  name: 旅人
 

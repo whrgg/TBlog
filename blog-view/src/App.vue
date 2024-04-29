@@ -1,19 +1,13 @@
 <template>
   <div id="app">
-    <headerVue></headerVue>
     <router-view/>
-    <footerVue></footerVue>
   </div>
 </template>
 
 <script>
-import headerVue from './components/header.vue'
-import footerVue from '@/components/footer/footer.vue'
+
 export default {
-  components: {
-    headerVue: headerVue,
-    footerVue: footerVue
-  }
+
 }
 </script>
 
@@ -24,19 +18,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
 }
 
 </style>

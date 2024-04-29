@@ -5,4 +5,5 @@ import com.traveller.entity.User;
 
 public interface UserService extends IService<User> {
     User selectUserByUsername(String username);
+    User selectUserByUsernameR(String username);
 }

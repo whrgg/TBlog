@@ -1,5 +1,6 @@
 package com.traveller.entity.vo;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.traveller.entity.Comment;
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a16cf772-76cd-45af-bb40-eedd49585b92" name="默认变更列表" comment="实体类的创建以及Markdown工具的构建" />
+    <list default="true" id="a16cf772-76cd-45af-bb40-eedd49585b92" name="默认变更列表" comment="实体类的创建以及Markdown工具的构建">
+      <change beforePath="$PROJECT_DIR$/blog-view/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/blog-view/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-view/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/blog-view/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-view/src/assets/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-view/src/components/HelloWorld.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-view/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/blog-view/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-view/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/blog-view/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-view/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/blog-view/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-view/src/views/HomeView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/blog-view/src/views/HomeView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-view/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/blog-view/vue.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-view/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/blog-view/yarn.lock" afterDir="false" />
+    </list>
     <list id="4b079421-33a8-49a3-b1a3-7be5f4be9399" name="Revert &quot;实体类的创建以及Markdown工具的构建&quot;" comment="Revert &quot;实体类的创建以及Markdown工具的构建&quot;&#10;&#10;This reverts commit d08b2566" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +33,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/blog-view" />
     <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="MavenImportPreferences">
@@ -43,19 +54,13 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="DatabaseDriversLRU" value="mysql" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
-    <property name="jdk.selected.JAVA_MODULE" value="corretto-1.8" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/blog-api" />
-    <property name="project.structure.last.edited" value="项目" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.notifications" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "G:/A.源码/TBlog/blog-api"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="G:\A.源码\TBlog\blog-api" />
@@ -136,7 +141,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="实体类的创建以及Markdown工具的构建" />

@@ -2,14 +2,46 @@
   <div id="comment-section">
     <h2>评论区</h2>
     <p>在下方进行评论：</p>
-    <textarea id="comment-text" placeholder="请输入您的评论..."></textarea>
-    <button>评论</button>
+    <textarea id="comment-text" placeholder="请输入您的评论..." v-model="textareaValue"></textarea>
+    <button @click="createNewComment()">评论</button>
 </div>
 </template>
 
 <script>
+import { saveComment } from '@/api/Comment'
 export default {
-
+  data: function () {
+    return {
+      textareaValue: '',
+      comment: null,
+      path: ''
+    }
+  },
+  methods: {
+    createNewComment () {
+      if (this.textareaValue === '' || this.textareaValue === null) {
+        return
+      }
+      this.comment = {
+        content: this.textareaValue,
+        isPublished: 1,
+        isAdminComment: 0,
+        page: 0,
+        isNotice: 0,
+        blogId: this.$route.params.id,
+        parentCommentId: -1,
+        website: '6666',
+        qq: '666666666'
+      }
+      this.path = this.$route.path
+      if (this.path.includes('/friend')) {
+        this.comment.page = 0
+        this.comment.blogId = -1
+      }
+      saveComment(this.comment)
+      this.$router.go(0)
+    }
+  }
 }
 </script>
 

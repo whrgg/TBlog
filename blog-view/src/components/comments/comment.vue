@@ -1,65 +1,131 @@
 <template>
   <div class="comments-containner">
-    <img src="@/assets/qwq.jpg" alt="" class="comments-photo">
+    <img :src="comment.avatar" alt="" class="comments-photo">
     <div class="comments-containner-left">
       <div class="comments-containner-time">
-        <span class="comment-desc">traveller</span>
+        <span class="comment-desc">{{comment.nickname}}</span>
         <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
-        <span class="comment-desc">2024-4-25</span>
+        <span class="comment-desc">{{comment.createTime}}</span>
       </div>
       <div class="comment-text">
-Unix系统使用的是时间片算法，而Windows则属于抢占式的。
-
-在时间片算法中，所有的进程排成一个队列。操作系统按照他们的顺序，给每个进程分配一段时间，即该进程允许运行的时间。如果在时间片结束时进程还在运行，则CPU将被剥夺并分配给另一个进程。如果进程在时间片结束前阻塞或结束，则CPU当即进行切换。调度程序所要做的就是维护一张就绪进程列表，当进程用完它的时间片后，它被移到队列的末尾。
-
-所谓抢占式操作系统，就是说如果一个进程得到了 CPU 时间，除
-所谓抢占式操作系统，就是说如果一个进程得到了 CPU 时间，除
-所谓抢占式操作系统，就是说如果一个进程得到了 CPU 时间，除
-所谓抢占式操作系统，就是说如果一个进程得到了 CPU 时间，除
-所谓抢占式操作系统，就是说如果一个进程得到了 CPU 时间，除
-所谓抢占式操作系统，就是说如果一个进程得到了 CPU 时间，除
-所谓抢占式操作系统，就是说如果一个进程得到了 CPU 时间，除
-所谓抢占式操作系统，就是说如果一个进程得到了 CPU 时间，除
-所谓抢占式操作系统，就是说如果一个进程得到了 CPU 时间，除
-所谓抢占式操作系统，就是说如果一个进程得到了 CPU 时间，除
-所谓抢占式操作系统，就是说如果一个进程得到了 CPU 时间，除
-所谓抢占式操作系统，就是说如果一个进程得到了 CPU 时间，除
-所谓抢占式操作系统，就是说如果一个进程得到了 CPU 时间，除
-所谓抢占式操作系统，就是说如果一个进程得到了 CPU 时间，除
+        {{ comment.content }}
       </div>
+      <br>
+      <br>
+      <commentchild v-for="item in comment.children " :key="item.id" :commentchild="item"></commentchild>
+      <el-button type="text" @click="open">回复</el-button>
     </div>
+
   </div>
 </template>
 
 <script>
-
+import commentchild from '@/components/comments/commentChild.vue'
+import { saveComment } from '@/api/Comment'
 export default {
-
+  props: ['comment'],
+  components: {
+    commentchild: commentchild
+  },
+  data: function () {
+    return {
+      newComment: null,
+      path: ''
+    }
+  },
+  methods: {
+    createNewComment (value) {
+      if (value === '' || value === null) {
+        return
+      }
+      this.newComment = {
+        content: value,
+        isPublished: 1,
+        isAdminComment: 0,
+        page: 0,
+        isNotice: 0,
+        blogId: this.$route.params.id,
+        parentCommentId: this.comment.id,
+        website: '6666',
+        qq: '666666666'
+      }
+      this.path = this.$route.path
+      if (this.path.includes('/friend')) {
+        this.newComment.page = 0
+        this.newComment.blogId = -1
+      }
+      saveComment(this.newComment)
+    },
+    open () {
+      this.$prompt('请输入回复', '回复', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        inputErrorMessage: '回复不正确'
+      }).then(({ value }) => {
+        this.createNewComment(value)
+        this.$message({
+          type: 'success',
+          message: '回复成功'
+        })
+        // this.$router.go(0)
+      }).catch(() => {
+        this.$message({
+          type: 'info',
+          message: '回复取消'
+        })
+      })
+    }
+  }
 }
+
 </script>
 
 <style scoped>
-  .comments-containner{
-    display: flex;
-    text-align: left;
-    position: relative;
-    width: 100%;
-    min-height: 20vh;
-    background-color: aqua;
-  }
+*{
+  padding: 0;
+  margin: 0;
+}
+.comments-containner{
+  display: flex;
+  text-align: left;
+  position: relative;
+  width: 100%;
+  min-height: 20vh;
+  background-color: aqua;
+}
 
-  .comments-containner > img{
-    border-radius:50%;
-    width: 75px;
-    height: 75px;
-    object-fit: contain;
-  }
+.comments-containner > img{
+  border-radius:50%;
+  width: 75px;
+  height: 75px;
+  object-fit: contain;
+}
 
-  .comments-containner-left{
-    margin-left: 2%;
-  }
-  .comment-desc{
-    font-weight:600;
-    font-size: large;
-  }
+.comments-containner-left{
+  width: 100%;
+  margin-left: 2%;
+}
+.comment-desc{
+  font-weight:600;
+  font-size: large;
+}
+
+.el-button {
+  width: 68px;
+  height: 37px;
+  position: absolute;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  bottom: 0;
+  right: 0;
+
+}
+
+.el-button:hover {
+    background-color: #0056b3;
+}
 </style>

@@ -13,7 +13,7 @@ export function getBlogPage (page, pageSize) {
 }
 
 export function getBlogById (id) {
-  return adminAxios({
+  return userAxios({
     url: `/blog/${id}`,
     method: 'GET'
   })

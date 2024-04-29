@@ -1,7 +1,8 @@
 <template>
   <div class="comments-containner">
     <createcomment></createcomment>
-    <commentVue></commentVue>
+    <commentVue v-for=" item in comments" :key="item.id" class="comentVue" :comment="item"></commentVue>
+
   </div>
 </template>
 
@@ -9,6 +10,7 @@
 import commentVue from './comment.vue'
 import createcomment from './creatcomment.vue'
 export default {
+  props: ['comments'],
   name: 'comments',
   components: {
     commentVue: commentVue,
@@ -18,5 +20,7 @@ export default {
 </script >
 
 <style scoped>
-
+ .comments-containner .commentVue{
+    margin: 5vh 0;
+  }
 </style>
